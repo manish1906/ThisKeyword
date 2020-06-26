@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>This Demo</title>
+   
+</head>
+<body>
+    <script>
+        console.log(this);     //this refer to the global object that is window
+       // In regular function ,this refer to the global object
+      
+        function sum() {
+
+            var add = 2 + 3;
+            console.log("Sum is :" + add);
+            
+            this.name = "Manish";
+            console.log(this);
+            
+            this.mul= function() {
+                var ml = 2 * 3;
+            
+                console.log(ml);
+      
+            }          
+
+        }
+        sum();
+        console.log(sum.length);
+        var m = new sum()
+        console.log();
+        m.mul();
+       // IN method ,this refer to the owner object.
+        var obj = {
+            name: "Manish",
+            Age: 20,
+            sum1:function () {
+                var add = 2 + 3;
+                console.log("Sum is :" + add);
+                console.log(this);
+                console.log(name);
+                console.log(this.name);
+            }
+        }
+        obj.sum1();
+    </script>
+</body>
+</html>
